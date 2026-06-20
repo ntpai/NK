@@ -1,0 +1,119 @@
+{% extends 'base_html.html' %}
+
+{% block title %} NK. {% endblock %}
+{% load static %}
+{% block extra_styles %}
+    <style>
+        a {
+            text-decoration: none !important;
+            color: #111111 !important;
+        }
+        a:hover {
+            text-decoration: underline !important;
+            color: #6C757D !important;
+        }
+        #hero-section{
+            margin-top: 4%;
+        }
+        .flex-display {
+            display: flex;
+            flex-direction: row;
+            {#height: 50vh;#}
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .block-text {
+            display: block;
+            width: 40%;
+            padding: 5% 5%;
+        }
+
+        .block-img img {
+            width: 400px;
+            max-height: 100%;
+            border-radius: 4px;
+            object-fit: cover;
+        }
+
+        .block-text h2 {
+            font-weight: normal;
+        }
+        #project-section {
+            margin-top: 9em;
+            margin-bottom: 9rem;
+        }
+        .section-title {
+            font-size: 1.6rem;
+            font-weight: 600;
+            line-height: 1rem;
+            padding: 0 5%;
+        }
+        .project-row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+        }
+        .project-meta {
+            display: block;
+            width: 30%;
+        }
+        .project-details {
+            display: block;
+            width: 60%;
+        }
+        .project-details p {
+            line-height: 1.1rem;
+            margin: 50px 0 24px 0;
+        }
+        #display-quote, #quote-author {
+            font-style: italic;
+            font-size: 1.4rem;
+            margin: 2% 5%;
+            width: 40%;
+            align-content: center;
+        }
+        .about-me {}
+    </style>
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="flex-display" id="hero-section">
+
+        <div class="block-text">
+            <h1>Navanith Kumar | Developer </h1>
+            <h2>Building web applications and documenting what I learn along the way.</h2>
+        </div>
+    </div>
+    <div id="project-section">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="project-row">
+            <div class="project-meta">
+                <h3>Medico</h3>
+                <div class="project-tags">
+                    <span>Django | </span>
+                    <span>Python | </span>
+                    <span>DB Architect</span>
+                </div>
+            </div>
+            <div class="project-details">
+                <p>Medico is a foundational Django web application template featuring an integrated Machine Learning
+                    model.</p>
+                <a href="https://github.com/ntpai/Medico">View Repository &#8599;</a>
+            </div>
+        </div>
+        <!-- adding new project later on -->
+    </div>
+    <div id="about-section">
+        <h2 class="section-title">About me</h2>
+{#        <p id="display-quote">"The cave you fear to enter holds the treasure you seek"</p>#}
+{#        <p id="quote-author" style="text-align: right;"> - Joseph Campbell</p>#}
+        <br>
+        <p class="about-me"></p>
+    </div>
+
+
+{% endblock %}

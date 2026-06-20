@@ -1,0 +1,264 @@
+:root {
+  /* The Macro Focus Palette */
+  --bg-canvas: #F8F9FA;       /* Crisp off-white background */
+  --text-primary: #212529;    /* Soft black for main text and headers */
+  --text-muted: #6C757D;      /* Muted gray for dates, captions, footers */
+  --accent-crimson: #E63946;  /* Vibrant crimson for pops of color */
+  --pure-white: #FFFFFF;      /* For button text or isolated content cards */
+}
+
+/* --- Base Styles --- */
+body {
+  background-color: var(--bg-canvas);
+  color: var(--text-primary);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-primary);
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+p {
+  margin-bottom: 1.2rem;
+}
+
+/* Use this class for blog post dates or image captions */
+.text-muted {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+
+/* --- 1. The Frosted Glass Background --- */
+.site-header {
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* --- 2. The Flexbox Layout --- */
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  height: 80px;
+}
+
+/* --- 3. THE FIX: Remove h3 default margins --- */
+.logo {
+  margin: 0; /* This stops the <h3> from breaking the vertical centering */
+  display: flex;
+  align-items: center;
+}
+
+.logo a {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-primary, #212529); /* Fallback color added just in case */
+  letter-spacing: -0.5px;
+  text-decoration: none;
+}
+
+/* --- 4. Link Styling --- */
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.nav-links li {
+  height: 100%;
+}
+
+.nav-links a {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 1.25rem;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--text-primary, #212529);
+  text-decoration: none;
+  box-sizing: border-box;
+  transition: color 0.2s ease-in-out;
+}
+
+.nav-links a:hover {
+  color: var(--accent-crimson, #E63946);
+}
+
+.nav-links li {
+  height: 100%;
+}
+
+.nav-links a {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 1.25rem;
+  font-weight: 500;
+  font-size: 1.05rem;
+  box-sizing: border-box;
+}
+
+/* --- Active & Hover States --- */
+.nav-links a.nav-active {
+  color: var(--accent-crimson);
+  border-top: 3px solid var(--accent-crimson);
+  padding-top: 3px;
+}
+
+.nav-links a:hover:not(.nav-active) {
+  color: var(--accent-crimson);
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+  .main-nav {
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
+    padding: 1rem;
+  }
+
+  .logo {
+    margin-bottom: 1rem;
+  }
+
+  .nav-links {
+    height: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .nav-links li {
+    height: auto;
+  }
+
+  .nav-links a {
+    padding: 0.5rem 1rem;
+    height: auto;
+  }
+
+  /* Switches the active indicator to a bottom border on mobile for better aesthetics */
+  .nav-links a.nav-active {
+    border-top: none;
+    border-bottom: 2px solid var(--accent-crimson);
+    padding-top: 0.5rem;
+  }
+}
+
+/* Inline links specifically within your blog paragraphs */
+.blog-content a {
+  color: var(--accent-crimson);
+  text-decoration: underline;
+  text-decoration-color: rgba(230, 57, 70, 0.3); /* Faded crimson underline */
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.2s ease-in-out;
+}
+
+.blog-content a:hover {
+  text-decoration-color: var(--accent-crimson); /* Solid underline on hover */
+}
+
+/* --- Buttons --- */
+.btn-primary {
+  display: inline-block;
+  background-color: var(--accent-crimson);
+  color: var(--pure-white);
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-primary:hover {
+  background-color: #D62835; /* Slightly darker shade of crimson for interaction */
+  color: var(--pure-white);
+  transform: translateY(-1px); /* Slight lift effect */
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* --- Decorative UI Accents --- */
+/* A subtle crimson line to divide sections or sit under main headers */
+hr.accent-divider {
+  border: 0;
+  height: 3px;
+  background-color: var(--accent-crimson);
+  width: 60px; /* Keeps it minimal and short */
+  margin: 1.5rem 0;
+}
+
+.animated-toast {
+    position: fixed;
+    top: 20px;
+    right: 20px; /* Starts it on the top right of the screen */
+    min-width: 250px;
+    padding: 15px 20px;
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1;
+    font-weight: 500;
+
+    animation: slideInAndOut 5s ease-in-out forwards;
+}
+.toast-success { background-color: #28a745; }
+.toast-error   { background-color: #dc3545; }
+.toast-warning { background-color: #ffc107; color: #333; }
+.toast-info    { background-color: #17a2b8; }
+
+@keyframes slideInAndOut {
+    0% {
+        transform: translateX(120%);
+        opacity: 0;
+    }
+    10% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    80% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(120%);
+        opacity: 0;
+    }
+}
+.borders {
+    border: 2px solid var(--text-muted, #6C757D); /* A subtle gray border by default */
+    border-radius: 10px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 40px 5%;
+    color: #555555;
+}
