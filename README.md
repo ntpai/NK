@@ -1,2 +1,2 @@
-# blogger
-website to showcase my works.
+# NK
+website to showcase my works and host api for personal use.
